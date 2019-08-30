@@ -27,6 +27,7 @@ class App extends Component {
 
   reset = () => {
     this.setState({
+      
       score: 
         {
           slytherin: 0,
