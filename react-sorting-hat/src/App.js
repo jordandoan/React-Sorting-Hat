@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Quiz from "./components/Quiz";
-
+import Results from "./components/Results";
 class App extends Component {
   constructor() {
     super();
@@ -55,6 +55,9 @@ class App extends Component {
         newWinner.push(house);
       }
     }
+    if (newWinner.length > 1) {
+      newWinner = newWinner[Math.floor(Math.random()*newWinner.length)];
+    }
     this.setState({winner:newWinner});
   }
 
@@ -62,6 +65,7 @@ class App extends Component {
     return (
       <div className="App">
         <Quiz handleSubmit={this.handleSubmit} handleChange={this.handleChange} score={this.state.score}/>
+        <Results winner={this.state.winner} />
       </div>
     );
   }
