@@ -3,6 +3,7 @@ import './App.css';
 
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
+import Intro from "./components/Intro";
 class App extends Component {
   constructor() {
     super();
@@ -16,6 +17,7 @@ class App extends Component {
         },
         questions: ["","","","","",""],
         winner: [],
+        viewQuiz: false
     };
   }
 
@@ -56,15 +58,20 @@ class App extends Component {
       }
     }
     if (newWinner.length > 1) {
-      newWinner = newWinner[Math.floor(Math.random()*newWinner.length)];
+      newWinner = [newWinner[Math.floor(Math.random()*newWinner.length)]];
     }
     this.setState({winner:newWinner});
+  }
+  
+  handleStart = () => {
+    this.setState({viewQuiz:true});
   }
 
   render() {
     return (
       <div className="App">
-        <Quiz handleSubmit={this.handleSubmit} handleChange={this.handleChange} score={this.state.score}/>
+        <Intro handleStart={this.handleStart} viewQuiz={this.state.viewQuiz}/>
+        <Quiz viewQuiz={this.state.viewQuiz} handleSubmit={this.handleSubmit} handleChange={this.handleChange} score={this.state.score}/>
         <Results winner={this.state.winner} />
       </div>
     );
