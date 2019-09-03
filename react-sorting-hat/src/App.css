@@ -1,28 +1,45 @@
+label {
+  display:block;
+  width:100%;
+}
+
 .App {
-  text-align: center;
+  width:50%;
+  margin:2% auto;
+  display:flex;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.house {
+  width: 700px;
+  margin: 5%;
+  margin-left: 15%;
+  height: 800px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.gryffindor {
+  border: 10px solid goldenrod;
+  color:white;
+  background-color: crimson;
+}
+
+.slytherin {
+  border: 10px solid silver;
+  color: darkblue;
+  background-color: darkgreen;
+}
+
+.hufflepuff {
+  border: 10px solid black;
+  color: black;
+  background-color: yellow;
+}
+
+.ravenclaw {
+  border: 10px solid blue;
   color: white;
+  background-color: brown;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.house h2 {
+  text-align:center;
 }
